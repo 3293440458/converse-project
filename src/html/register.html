@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/css/register.css">
+		<script src="/libs/jquery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="/libs/require/require.js" data-main="/js/register.js"></script>
+	</head>
+	<body>
+		<div class="stickspace"></div>
+		<header></header>
+		<form id="register_form" class="register-form">
+			<div class="form-title">
+				<h3>用户注册</h3>
+			</div>
+			<div class="message-box"><i>手机号码<b style="color: red;">*</b></i><input type="text" placeholder="135xxxx3333" id="user_phone"/><span class="error">请输入手机号码！</span></div>
+			<div class="message-box"><i>邮箱<b style="color: red;">*</b></i><input type="text" placeholder="example@converse.com" id="user_email"/><span class="error">请输入电子邮箱地址！</span></div>				
+			<div class="message-box"><i>输入密码<b style="color: red;">*</b></i><input type="text" placeholder="密码至少为6位字符" id="user_pwd"/><span class="error">密码至少为6位字符</span></div>
+			<div class="message-box"><i>确认密码<b style="color: red;">*</b></i><input type="text" placeholder="请再次输入密码" id="pwd_again"/><span class="error">请再次输入密码</span></div>
+			<div class="message-box">
+				<i>性别<b style="color: red;">*</b></i>
+				<div class="gender-box">
+					<div class="gender choose">
+						男的
+					</div>
+					<div class="gender">
+						女的
+					</div>
+				</div>
+				<span class="error"></span>
+			</div>
+			<div class="message-box">
+				<i style="line-height: 25px;">生日<br/>(年-月-日)<b style="color: red;">*</b></i>
+				<span class="error"></span>
+			</div>
+				
+		</form>
+		<footer></footer>
+	</body>
+</html>
