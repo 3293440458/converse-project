@@ -2,7 +2,7 @@
 @import "./component/footer.scss";
 @import "./component/chatfixed.scss";
 
-.register-form{
+.login-form{
     height: 660px;
     width: 700px;
     margin: 30px auto 0;
@@ -39,7 +39,7 @@
         font-size: 13px;
         line-height: 20px;
         width: 50%;
-        margin: 0 auto;
+        margin: 20px auto;
         display: flex;
         i{
             line-height: 60px;
@@ -71,24 +71,24 @@
             font-size: 12px;
             z-index: 0;
         }
-        .gender-box{
+        .remember-box{
             line-height: 40px;
             margin: 10px 0 25px 0;
             max-height: 40px;
             position: relative;
-            width: 80%;
+            width: 100%;
             min-height: 40px;
             
-            .gender{
+            .remember-me{
                 color: #000;
                 cursor: pointer;
                 float: left;
                 text-align: left;
                 text-indent: 30px;
-                width: 50%;
+                width: 25%;
                 position: relative;
             }
-            .gender::before{
+            .remember-me::before{
                 border: 1px solid #999;
                 content: "";
                 height: 14px;
@@ -108,17 +108,28 @@
             }
             
         }
+        .forgetpwd{
+            float: right;
+            text-align: right;
+            width: 50%;
+            a{
+                color: #333;
+                text-decoration: underline;
+                font-weight: 800;
+            }
+        }
         
         .law-box{
             width: 100%;
             font-size: 11px;
+            text-align: center;
             margin-bottom: 10px;
             a{
                 text-decoration: underline;
                 color: #333;
             }
         }
-        #register-btn{
+        #login-btn{
             background-color: #000;
             color: #fff;
             cursor: pointer;
@@ -130,7 +141,7 @@
             border: 1px solid #000;
             box-sizing: border-box;
         }
-        #register-btn::after{
+        #login-btn::after{
             background: url("/static/images/sprites_header_footer.png") no-repeat scroll -10px -164px transparent;
             width: 15px;
             height: 28px;
@@ -139,16 +150,16 @@
             margin-left: 12px;
             content: "";
         }
-        #register-btn:hover{
+        #login-btn:hover{
             color: #000;
             background: #FFFFFF;
         }
-        #register-btn:hover::after{
+        #login-btn:hover::after{
             background: url("/static/images/sprites_header_footer.png") no-repeat scroll -43px -164px transparent;
         }
         
     }
-    .register-btn-wrap{
+    .login-btn-wrap{
         flex-flow: column;
     }
 }

@@ -10,14 +10,17 @@
 	<body>
 		<div class="stickspace"></div>
 		<header></header>
+		<div class="chatfixed">
+			
+		</div>
 		<form id="register_form" class="register-form">
 			<div class="form-title">
 				<h3>用户注册</h3>
 			</div>
 			<div class="message-box"><i>手机号码<b style="color: red;">*</b></i><input type="text" placeholder="135xxxx3333" id="user_phone"/><span class="error">请输入手机号码！</span></div>
 			<div class="message-box"><i>邮箱<b style="color: red;">*</b></i><input type="text" placeholder="example@converse.com" id="user_email"/><span class="error">请输入电子邮箱地址！</span></div>				
-			<div class="message-box"><i>输入密码<b style="color: red;">*</b></i><input type="text" placeholder="密码至少为6位字符" id="user_pwd"/><span class="error">密码至少为6位字符</span></div>
-			<div class="message-box"><i>确认密码<b style="color: red;">*</b></i><input type="text" placeholder="请再次输入密码" id="pwd_again"/><span class="error">请再次输入密码</span></div>
+			<div class="message-box"><i>输入密码<b style="color: red;">*</b></i><input type="password" placeholder="密码至少为6位字符" id="user_pwd"/><span class="error">密码至少为6位字符</span></div>
+			<div class="message-box"><i>确认密码<b style="color: red;">*</b></i><input type="password" placeholder="请再次输入密码" id="pwd_again"/><span class="error">请再次输入密码</span></div>
 			<div class="message-box">
 				<i>性别<b style="color: red;">*</b></i>
 				<div class="gender-box">
@@ -30,9 +33,15 @@
 				</div>
 				<span class="error"></span>
 			</div>
-			<div class="message-box">
-				<i style="line-height: 25px;">生日<br/>(年-月-日)<b style="color: red;">*</b></i>
-				<span class="error"></span>
+			<div class="message-box register-btn-wrap">
+				<div class="law-box">
+					一旦创建账户，即表明你同意匡威的<a href="#">法律声明</a>和<a href="#">使用规则</a>
+				</div>
+				<div id="register-btn">
+					注册账户
+				</div>
+				
+				<span class="error">请填写所有信息！</span>
 			</div>
 				
 		</form>

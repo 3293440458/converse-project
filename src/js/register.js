@@ -1,7 +1,7 @@
-//首页的业务逻辑
+//注册的业务逻辑
 require(["./requirejs.config"], () => {
 	//引入index需要依赖的模块
-	require(["jquery", "header","footer"], () => {
+	require(["jquery", "header","footer","chatfixed"], () => {
 		
 	})
 })
@@ -34,8 +34,15 @@ $("#pwd_again").on("blur",function(){
 		$(this).siblings("span").css({display:"block"});
 	}
 })
+//性别选择
 $(".gender").on("click",function(){
 	$(this).addClass("choose").siblings().removeClass("choose");
+})
+//注册按钮
+$("#register-btn").on("click",function(){
+	$.ajax({
+		
+	})
 })
 
 

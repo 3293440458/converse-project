@@ -1,13 +1,14 @@
 //首页的业务逻辑
 require(["./requirejs.config"], () => {
 	//引入index需要依赖的模块
-	require(["jquery", "header","links","footer"], () => {
+	require(["jquery", "header","links","footer","chatfixed","bgblack"], () => {
 		
 	})
 })
 
-//轮播图
+
 $(function(){
+	//轮播图
 	let $li = $("#autobox ul li");
 	$li.eq(0).addClass("ac").css({opacity:1});
 	let len = $li.length;
@@ -63,14 +64,15 @@ $(function(){
 		$("b").animate({opacity:0},1000);
 		autoPlay();
 	});
+	//滑动指向
+	$(".bs-example").on("mouseover",function(e){
+		var i = $(this).attr("data-index");
+		$(".brand-menu").stop().animate({left:12+Number($(this).attr("data-index"))*25+"%"},"slow");
+		$(".brand-box-kid").stop().animate({opacity:0},"slow").css({display:"none"}).eq(i).stop()
+		.css({display:"block"}).animate({opacity:1},"slow");
+	})
 })
 
-//滑动指向
-$(".bs-example").on("mouseover",function(e){
-	var i = $(this).attr("data-index");
-	$(".brand-menu").stop().animate({left:12+Number($(this).attr("data-index"))*25+"%"},"slow");
-	$(".brand-box-kid").stop().animate({opacity:0},"slow").css({display:"none"}).eq(i).stop()
-	.css({display:"block"}).animate({opacity:1},"slow");
-})
+
 
 
