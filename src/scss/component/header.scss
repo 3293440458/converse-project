@@ -61,10 +61,17 @@ h1 a{display: block;height: 19px;width: 161px;}
 	right: 0;
 }
 .iconbox .iconbox-none{display: none;}
-.log-sign-button::before{
+.logining{position: relative;}
+.logining:hover{
+    text-decoration: underline;
+}
+.user-method{
+    
+}
+.log-sign-button::before,.logining::before{
 	background-position: -96px -85px;
 }
-.log-sign-button:hover::before{
+.log-sign-button:hover::before,.logining:hover::before{
 	background-position: -136px -64px;
 }
 .shopbox{
@@ -73,17 +80,18 @@ h1 a{display: block;height: 19px;width: 161px;}
 .shopbox::before{
 	background: none;
 }
-.shop-animate-wrap{
+
+.shop-animate-wrap,.user-method{
     overflow: hidden;
     position: absolute;
     left: 50%;
     margin-left: -150px;
     height: 0px;
     width: 300px;
-    z-index:999;
+    z-index:899;
     background: #fff;
 }
-.shop-animate-title{
+.shop-animate-title,.user-method-title{
     background-color: #464646;
     position: relative;
     text-align: center;
@@ -101,13 +109,44 @@ h1 a{display: block;height: 19px;width: 161px;}
         bottom: 0px;
     }
 }
-.shop-animate-box{
-    height: 49px;
+.shop-animate-box,.user-method-box{
+    position: relative;
     margin: auto;
     padding: 10px 0;
     text-align: center;
     line-height: 49px;
     color: #999;
+}
+.close-box{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: url("/static/images/X-copy.png") scroll 0px 0px no-repeat transparent;
+    z-index: 300;
+}
+.user-method{
+    z-index: 900;
+    margin-left: -87px;
+    width: 174px;
+    background: #eee;
+    span{border-color: transparent transparent #eee;}
+    .user-method-box{
+        padding: 0;
+        ul{
+            display: flex;
+            flex-flow: column;
+            align-content: space-between;
+            li{
+                border-bottom: 1px dashed #ccc;
+                line-height: 45px;
+                a{color: #333;display: block;}
+                a:hover{background: #000;color: #fff;}
+            }
+        }
+    }
 }
 #shopnum{
 	background: url("/static/images/sprites_header_footer.png") scroll -168px -97px no-repeat transparent;
@@ -224,4 +263,13 @@ nav ul{margin: 0 auto;}
 	height: 1px;
 	width: 100%;
 	clear: both;
+}
+.bgblack{
+    display: none;
+    opacity: .6;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    z-index: 800;
 }

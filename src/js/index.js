@@ -1,7 +1,7 @@
 //首页的业务逻辑
 require(["./requirejs.config"], () => {
 	//引入index需要依赖的模块
-	require(["jquery", "header","links","footer","chatfixed","bgblack"], () => {
+	require(["jquery", "header","links","footer","chatfixed","cookie"], () => {
 		$(function(){
 			//轮播图
 			let $li = $("#autobox ul li");
@@ -66,6 +66,8 @@ require(["./requirejs.config"], () => {
 				$(".brand-box-kid").stop().animate({opacity:0},"slow").css({display:"none"}).eq(i).stop()
 				.css({display:"block"}).animate({opacity:1},"slow");
 			})
+
+			
 		})
 	})
 })

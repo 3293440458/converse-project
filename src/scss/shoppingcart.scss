@@ -1,7 +1,7 @@
 @import "./component/header.scss";
 @import "./component/footer.scss";
 @import "./component/chatfixed.scss";
-@import "./component/bgblack.scss";
+
 
 .shoppingcart{
     width: 100%;
@@ -40,17 +40,15 @@
         .shopping-checked{
             font-size: 14px;
             margin-bottom: 8px;
-            .all-check{
+            #all-check{
                 display: inline-block;              
                 color: #333;
                 padding: 10px 0;
-                padding-left: 28px;
-                background: url("/static/images/check.png") no-repeat left center;
+                padding-left: 28px;        
                 cursor: pointer;
             }
-            .all-checked{
-                background: url("/static/images/checked.png") no-repeat left center;
-            }
+            .check{background: url("/static/images/check.png") no-repeat left center;}
+            .checked{ background: url("/static/images/checked.png") no-repeat left center;}
             p{
                 display: inline-block;
                 margin-left: 18px;
@@ -61,9 +59,11 @@
             border-bottom: 1px solid #b7b7b7;
             width: 100%;
             padding: 0 29px;
-            height: 240px;
+            min-height: 240px;
             box-sizing: border-box;
+            .shopping-content:nth-child(1){border:0}
             .shopping-content{
+                border-top: 1px solid #b7b7b7;
                 overflow: hidden;
                 .shopping-method{
                     overflow: hidden;
@@ -287,6 +287,7 @@
                 margin-top: 33px;
                 cursor: pointer;
             }
+            .settlement-btn:hover{opacity: .8;}
         }
     }
 }

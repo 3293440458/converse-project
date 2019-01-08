@@ -1,4 +1,4 @@
-define(["jquery"], () => {
+define(["jquery","cookie"], () => {
 	class Header{
 		constructor(){
 			this.init();
@@ -10,9 +10,71 @@ define(["jquery"], () => {
 					resolve();
 				})
 			}).then(() => {
+				this.hasuser();
+				this.showUsermethod();
+				this.signOut();
+				this.bgblack();
+				this.bgrecovery();
 				this.suctionTop();
 				this.tab();
 				this.shopanimate();
+			})
+		}
+		//是否有cookie
+		hasuser(){
+			if($.cookie("user") === undefined){
+				$("#islogin").removeClass("logining").addClass("log-sign-button").html(
+					`<a href="/html/login.html"><span class="log" title="登录">登录</span></a>
+					<span>/</span>
+				<a href="/html/register.html"><span class="register" title="注册">注册</span></a>`
+				);
+			}else{
+				$("#islogin").removeClass("log-sign-button").addClass("logining").html(
+					`<span>欢迎您&nbsp;,&nbsp;&nbsp;&nbsp;${JSON.parse($.cookie("user")).id}</span>
+					<div class="user-method">
+						<div class="user-method-title">
+							<span></span>
+						</div>
+						<div class="user-method-box">
+							<ul>
+								<li><a>我的账户</a></li>
+								<li><a>我的订单</a></li>
+								<li><a>我的优惠券</a></li>
+								<li class="sign-out"><a>退出</a></li>
+							</ul>
+						</div>
+					</div>`
+				);
+			}
+		}
+		signOut(){
+			$(".sign-out").on("click",function(){
+				$.cookie("user","",{expires:-1,path:"/"});
+				location.href = "/index.html";
+			})
+		}
+		//显示用户操作表
+		showUsermethod(){
+			$(".logining").hover(function(){
+				$(".user-method").stop().animate({height:"200px"});
+			},function(){
+				$(".user-method").stop().animate({height:"0"});
+			})
+		}
+		//点击黑屏聚焦视野
+		bgblack(){
+			$(".bgchange-btn").on("click",function(){
+				if($(".bgblack").css("display") === "none"){
+					$(".bgblack").fadeIn();
+				}else{
+					$(".bgblack").fadeOut();
+				}
+				
+			})
+		}
+		bgrecovery(){
+			$(".bgrecovery-btn").on("click",function(){
+				$(".bgblack").fadeOut();	
 			})
 		}
 		//吸顶
@@ -53,7 +115,8 @@ define(["jquery"], () => {
 		//购物车弹出
 		shopanimate(){
 			var flag = true;
-			$(".shopbox").on("click",function(){
+			$(".shop-box-show").on("click",function(e){
+				e.stopPropagation();
 				if(flag === true){
 					$(".shop-animate-wrap").stop().animate({height:"300px"});
 				}else{
