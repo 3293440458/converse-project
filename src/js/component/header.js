@@ -12,6 +12,7 @@ define(["jquery"], () => {
 			}).then(() => {
 				this.suctionTop();
 				this.tab();
+				this.shopanimate();
 			})
 		}
 		//吸顶
@@ -42,12 +43,24 @@ define(["jquery"], () => {
 				$(".second-menu").eq($(this).index()).stop().fadeOut();
 			})
 			$(".second-menu").on("mouseenter",function(){
-				$(this).stop().css({display:"block"});
+				$(this).stop().css({display:"block",opacity:1});
 			})
 			$(".second-menu").on("mouseleave",function(){
 				$(this).stop().fadeOut();
 			})
 			
+		}
+		//购物车弹出
+		shopanimate(){
+			var flag = true;
+			$(".shopbox").on("click",function(){
+				if(flag === true){
+					$(".shop-animate-wrap").stop().animate({height:"300px"});
+				}else{
+					$(".shop-animate-wrap").stop().animate({height:"0"});
+				}
+				flag = !flag;
+			})
 		}
 	}
 	return new Header();

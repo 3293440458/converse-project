@@ -16,7 +16,7 @@ define(["jquery"], () => {
 		}
 		posi(){
 			$(window).on("scroll",function(){
-				$(".chatfixed").stop().animate({top:$(document).scrollTop()+150+"px"},"slow");
+				$(".chatfixed").stop().animate({top:$(document).scrollTop()+200+"px"},"slow");
 			})
 		}
 		

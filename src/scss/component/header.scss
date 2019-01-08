@@ -67,8 +67,47 @@ h1 a{display: block;height: 19px;width: 161px;}
 .log-sign-button:hover::before{
 	background-position: -136px -64px;
 }
+.shopbox{
+    position: relative;
+}
 .shopbox::before{
 	background: none;
+}
+.shop-animate-wrap{
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    height: 0px;
+    width: 300px;
+    z-index:999;
+    background: #fff;
+}
+.shop-animate-title{
+    background-color: #464646;
+    position: relative;
+    text-align: center;
+    height: 15px;
+    overflow: hidden;
+    span{
+        border:15px solid;
+        border-color: transparent transparent #fff ;
+        /*border-right: 6px solid transparent;*/
+        position: absolute;
+        width: 0;
+        margin-left: -15px;
+        height: 0;
+        left: 50%;
+        bottom: 0px;
+    }
+}
+.shop-animate-box{
+    height: 49px;
+    margin: auto;
+    padding: 10px 0;
+    text-align: center;
+    line-height: 49px;
+    color: #999;
 }
 #shopnum{
 	background: url("/static/images/sprites_header_footer.png") scroll -168px -97px no-repeat transparent;
