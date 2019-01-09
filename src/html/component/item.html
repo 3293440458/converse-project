@@ -1,0 +1,12 @@
+<div class="product-wrapbox">
+	<script type="text/html" id="list-template">
+		{{each list item i}}
+		<dl>
+			<dt><a href="/html/details.html?id={{item.id}}"><img src="{{item.img}}"/></a></dt>
+			<dd class="p-l-name">{{item.title}}</dd>
+			<dd class="p-l-price">{{item.price}}</dd>
+		</dl>
+		{{/each}}
+	</script>
+</div>
+

@@ -1,0 +1,130 @@
+@import "./component/header.scss";
+@import "./component/links.scss";
+@import "./component/footer.scss";
+@import "./component/chatfixed.scss";
+
+.productlist-content{
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    .productlist-title{
+        width: 100%;
+        margin: 40px auto 45px;
+        position: relative;
+        h2{
+            font-size: 30px;
+            font-weight: normal;
+            background: none repeat scroll 0 0 #fff;
+            display: inline-block;      
+            height: 30px;
+            line-height: 30px;
+            margin: 0 auto;
+            padding: 0 4%;
+            position: absolute;
+            left: 50%;
+            margin-left: -88px;
+        }
+    }
+    .productlist-title::before{
+        background-color: #b7b7b7;
+        content: "";
+        height: 1px;
+        left: 1.5%;
+        position: absolute;
+        top: 15px;
+        width: 97%;
+    }
+    .filter-wrap{
+        width: 25%;
+        float: left;
+        margin-top: 100px;
+        .filter-box{
+            width: 88%;
+            dl{
+                height: 25px;
+                border-top: 1px solid #b7b7b7;
+                padding: 18px 0 5px 0;
+                overflow: hidden;
+                dt{
+                    font-size: 18px;
+                    margin-bottom: 18px;
+                    font-weight: bold;
+                    background: url("/static/images/plus.png") no-repeat right center;
+                }
+                .long{
+                    background: url("/static/images/minus.png") no-repeat right center;
+                }
+                dd{
+                    cursor: pointer;
+                    line-height: 25px;
+                    vertical-align: middle;
+                    font-size: 14px;
+                    margin-bottom: 15px;
+                    text-indent: 8px;
+                }
+                dd::before{
+                    background-color: #fff;
+                    border: 1px solid #b7b7b7;
+                    box-sizing: border-box;
+                    content: "";
+                    display: inline-block;
+                    float: left;
+                    height: 16px;
+                    margin-left: 2px;
+                    margin-right: 5px;
+                    margin-top: 5px;
+                    width: 16px;
+                }
+            }
+        }
+    }
+    .product-list{
+        margin-top: 100px;
+        width: 75%;
+        float: left;
+        height: auto;
+        position: relative;
+        dl:hover{
+            border: 1px solid #B7B7B7;
+        }
+        dl{
+            width: 33.3333%;
+            height: 300px;
+            float: left;
+            position: relative;
+            font-size: 14px;
+            box-sizing: border-box;
+            dt{
+                width: 165px;
+                margin: 0 auto;
+                height: 180px;
+                position: relative;
+                padding-top: 10px;
+                a{
+                    height: 100%;
+                    width: 100%;
+                    display: block;
+                    img{
+                        margin-bottom: 9.1%;
+                        width: 165px;
+                        height: 165px;
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+            }
+            dd{
+                width: 100%;
+                text-align: center;
+                line-height: 18px;
+            }
+            .p-l-name{
+                height: 55px;
+                margin-bottom: 5px;
+            }
+            .p-l-price{
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -10,7 +10,7 @@
 		<div class="stickspace"></div>
 		<header></header>
 		<div class="chatfixed"></div>
-		<div class="details-box">
+		<div class="details-box" id="details-box">
 			<div class="details-content">
 				<div class="details-tab-list">
 					<div class="share-wrap">
@@ -34,10 +34,10 @@
 				<div class="details-message">
 					<div class="details-name">
 						<h2 class="product-name">
-							<span id="product-name">【男女同款】Chuck 70</span>
+							<span id="product-name"></span>
 						</h2>
 						<div class="product-price">
-							价格：<span>￥559</span>
+							价格：￥<span></span>
 						</div>
 					</div>
 					<div class="product-img">
@@ -70,7 +70,7 @@
 							过的销售价等，仅供您参考。</p>
 						<p>未划线价格：未划线的价格是商品在官网上的销售标价，具体的成交价格可能因为会员使
 							用优惠券发生变化，最终以订单结算页价格为准。</p>
-						<a href="#" class="learn-more-btn">Chuck 70</a>
+						<a href="/html/list.html" class="learn-more-btn">Chuck 70</a>
 					</div>
 				</div>
 				<div class="details-product-add">
@@ -78,29 +78,36 @@
 					<div class="product-select-msg">
 						<div class="select-msg-left">请输入您的尺码</div>
 						<div class="select-msg-right">
-							<span></span>
+							<span>请选择尺码</span>
+							<select id="sizeSelect" name="">
+								<option value="">请选择尺码</option>
+															
+							</select>
 							<i></i>
 						</div>
 					</div>
 					<div class="product-select-num">
 						<div class="select-num-left">数量</div>
 						<div class="select-num-right">
-							<span></span>	
+							<span>1</span>	
 							<div class="select-num-btn">
 								<i class="select-num-add"></i>
 								<i class="select-num-reduce"></i>
 							</div>
 						</div>
 					</div>
-					<div class="now-buy-btn">
+					<div class="now-buy-btn" id="now-buy-btn">
 						立即购买
 					</div>
-					<div class="add-shoppingcart-btn">
+					<div class="add-shoppingcart-btn" id="add-shoppingcart-btn">
 						加入购物车
 					</div>
 				</div>
 				
 			</div>
+		
+		
+		
 		</div>
 		<div class="links"></div>
 		<footer></footer>
