@@ -55,9 +55,11 @@ require(["./requirejs.config"], () => {
 			}
 			autoPlay();
 			$("#autobox").hover(function(){
+				console.log("333");
 				clearInterval(timer);
 				$("b").animate({opacity:1},1000);	
 			},function(){
+				console.log("666");
 				$("b").animate({opacity:0},1000);
 				autoPlay();
 			});
