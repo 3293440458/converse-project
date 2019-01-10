@@ -54,7 +54,7 @@ h1 a{display: block;height: 19px;width: 161px;}
 	position: absolute;
 	background-image: url("/static/images/sprites_header_footer.png");
 	background-repeat: no-repeat;
-	width: 30px;
+	width: 31px;
 	height: 31px;
 	top: 50%;
 	margin-top: -15px;
@@ -74,13 +74,14 @@ h1 a{display: block;height: 19px;width: 161px;}
 .log-sign-button:hover::before,.logining:hover::before{
 	background-position: -136px -64px;
 }
+
 .shopbox{
     position: relative;
 }
 .shopbox::before{
-	background: none;
+	background-position: -63px -54px;
 }
-
+.shopbox:hover::before{background-position: -166px -32px;}
 .shop-animate-wrap,.user-method{
     overflow: hidden;
     position: absolute;
@@ -147,6 +148,21 @@ h1 a{display: block;height: 19px;width: 161px;}
             }
         }
     }
+}
+
+#change-btn{
+    height: 50px;
+    background: red;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    top: 225px;
+    line-height: 50px;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
 }
 #shopnum{
 	background: url("/static/images/sprites_header_footer.png") scroll -168px -97px no-repeat transparent;
@@ -264,7 +280,7 @@ nav ul{margin: 0 auto;}
 	width: 100%;
 	clear: both;
 }
-.bgblack{
+.bgblack,.bgblack-deep{
     display: none;
     opacity: .6;
     position: fixed;
@@ -272,4 +288,7 @@ nav ul{margin: 0 auto;}
     height: 100%;
     background: #333;
     z-index: 800;
+}
+.bgblack-deep{
+    z-index: 1200;
 }

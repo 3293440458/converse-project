@@ -17,17 +17,23 @@ define(["jquery","cookie"], () => {
 				this.bgrecovery();
 				this.suctionTop();
 				this.tab();
-				this.shopanimate();
+				this.hasShopcart();
+				this.bgblackDeep();
 			})
 		}
-		//是否有cookie
+		//是否有user的cookie
 		hasuser(){
+			var hasUser;
 			if($.cookie("user") === undefined){
 				$("#islogin").removeClass("logining").addClass("log-sign-button").html(
 					`<a href="/html/login.html"><span class="log" title="登录">登录</span></a>
 					<span>/</span>
 				<a href="/html/register.html"><span class="register" title="注册">注册</span></a>`
 				);
+				$(".shopbox").on("click",function(){
+					alert("请先登录！")
+				})
+				hasUser = false;
 			}else{
 				$("#islogin").removeClass("log-sign-button").addClass("logining").html(
 					`<span>欢迎您&nbsp;,&nbsp;&nbsp;&nbsp;${JSON.parse($.cookie("user")).id}</span>
@@ -45,7 +51,12 @@ define(["jquery","cookie"], () => {
 						</div>
 					</div>`
 				);
+				$(".shopbox").on("click",function(){
+					window.location.href = "/html/shoppingcart.html";
+				})
+				hasUser = true;
 			}
+			return hasUser;
 		}
 		signOut(){
 			$(".sign-out").on("click",function(){
@@ -72,9 +83,20 @@ define(["jquery","cookie"], () => {
 				
 			})
 		}
+		bgblackDeep(){
+			$(".bgchange-deep-btn").on("click",function(){
+				if($(".bgblack-deep").css("display") === "none"){
+					$(".bgblack-deep").fadeIn();
+				}else{
+					$(".bgblack-deep").fadeOut();
+				}
+				
+			})
+		}
 		bgrecovery(){
 			$(".bgrecovery-btn").on("click",function(){
-				$(".bgblack").fadeOut();	
+				$(".bgblack").fadeOut();
+				$(".bgblack-deep").fadeOut();
 			})
 		}
 		//吸顶
@@ -112,19 +134,27 @@ define(["jquery","cookie"], () => {
 			})
 			
 		}
-		//购物车弹出
-		shopanimate(){
-			var flag = true;
-			$(".shop-box-show").on("click",function(e){
-				e.stopPropagation();
-				if(flag === true){
-					$(".shop-animate-wrap").stop().animate({height:"300px"});
+		//购车弹窗内容
+		hasShopcart(){
+			if($.cookie("user") === undefined){
+				$(".shop-animate-box").html("您还没有登录，请登录查看您的购物车！");
+			}else{
+				if($.cookie("shop") === undefined || JSON.parse($.cookie("shop")).length === 0){
+					$(".myshop-message").html("您的购物车还没有东西哦，快去购物吧！");
+					$("#change-btn").html("去购物！&gt;&gt;");
+					$("#change-btn").on("click",function(){
+						window.location.href = "/html/list.html";
+					});
 				}else{
-					$(".shop-animate-wrap").stop().animate({height:"0"});
+					$(".myshop-message").html("");
+					$("#change-btn").html("查看购物车&gt;&gt;");
+					$("#change-btn").on("click",function(){
+						window.location.href = "/html/shoppingcart.html";
+					});
 				}
-				flag = !flag;
-			})
+			}
 		}
+		
 	}
 	return new Header();
 })

@@ -173,7 +173,7 @@
                                     text-align: center;
                                     cursor: pointer; 
                                 }
-                                input{
+                                .shopping-number{
                                     float: left;
                                     display: block;
                                     width: 38px;
@@ -289,5 +289,26 @@
             }
             .settlement-btn:hover{opacity: .8;}
         }
+    }
+}
+.edit-message-box{
+    display: none;
+    width: 600px;
+    height: 400px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -300px;
+    margin-top: -200px;
+    background: #CCCCCC;
+    z-index: 2000;
+    .close-edit-box{
+        background: url("/static/images/X-copy.png") no-repeat scroll center center transparent;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        cursor: pointer;
     }
 }

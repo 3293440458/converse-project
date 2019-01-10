@@ -1,0 +1,12 @@
+<div>
+	<script type="text/html" id="index-template">
+		{{each list items i}}
+		<dl>
+			<dt><a href="/html/details.html?id={{items.id}}"><img src="{{items.img}}"/></a></dt>
+			<dd class="list-title"><a href="#">{{items.title}}</a></dd>
+			<dd class="list-pirce"><a href="#">¥{{items.price}}</a></dd>
+		</dl>
+		{{/each}}
+	</script>
+</div>
+

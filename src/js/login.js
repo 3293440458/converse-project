@@ -3,6 +3,9 @@ require(["./requirejs.config"], () => {
 	//引入index需要依赖的模块
 	require(["jquery","url", "header","footer","chatfixed","cookie"], ($,url) => {
 		$(function(){
+			if($.cookie("user")){
+				window.location.href = "/index.html";
+			}
 			//记住存cookie
 			$(".remember-me").on("click",function(){
 				if($(this).hasClass("choose")){
@@ -41,6 +44,7 @@ require(["./requirejs.config"], () => {
 								}),
 								{path:"/"}
 							);
+							
 						}
 						if(res.res_code){
 							window.location.href = "/index.html";

@@ -1,8 +1,10 @@
 //首页的业务逻辑
 require(["./requirejs.config"], () => {
 	//引入index需要依赖的模块
-	require(["jquery","header","links","footer","chatfixed","cookie"], () => {
+	require(["jquery","url","items","header","links","footer","chatfixed","cookie"], ($,url,items,header) => {
 		$(function(){
+			items.init(url.baseUrlRap+"/indexlist");
+			console.log(header.hasuser());
 			//轮播图
 			let $li = $("#autobox ul li");
 			$li.eq(0).addClass("ac").css({opacity:1});

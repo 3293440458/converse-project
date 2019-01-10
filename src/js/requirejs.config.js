@@ -9,6 +9,7 @@ require.config({
 		"footer" : "js/component/footer",
 		"chatfixed" : "js/component/chatfixed",
 		"item"   : "js/component/item",
+		"items"   : "js/component/items",
 		"url"    : "js/component/url",
 		"template" : "libs/template-web"
 		
